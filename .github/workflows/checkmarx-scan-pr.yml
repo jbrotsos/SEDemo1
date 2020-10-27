@@ -19,10 +19,11 @@ jobs:
       with:
         project: GithubActionTest
         team: /CxServer
+        preset: Checkmarx Express
         checkmarx_url: ${{ secrets.CHECKMARX_URL }}
         checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         break_build: false
         github_token: ${{ secrets.GH_TOKEN }}
-        params: --checkmarx.scan-preset="High and Medium" --checkmarx.incremental=false --namespace=${{ env.ORG_NAME }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.head_ref }} --bug-tracker=GITHUBPULL --merge-id=${{ github.event.number }}
+        params: --checkmarx.incremental=false --namespace=${{ env.ORG_NAME }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.head_ref }} --bug-tracker=GITHUBPULL --merge-id=${{ github.event.number }}
