@@ -25,4 +25,4 @@ jobs:
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         break_build: false
         github_token: ${{ secrets.GH_TOKEN }}
-        params: --checkmarx.incremental=false --namespace=${{ env.ORG_NAME }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.head_ref }} --bug-tracker=GITHUBPULL --merge-id=${{ github.event.number }}
+        params: --checkmarx.scan-preset="High and Medium" --checkmarx.incremental=false --namespace=${{ env.ORG_NAME }} --repo-name=${{ github.event.repository.name }}  --branch=${{ github.head_ref }} --bug-tracker=GITHUBPULL --merge-id=${{ github.event.number }}
